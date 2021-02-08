@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>City Weather</title>
+</head>
+
+<body>
+    {% for city in weather %}
+
+    <h1>City : {{ city.city }}</h1>
+    <h2>Weather Details</h2>
+    Description : {{ city.description }}
+    Temprature : {{ city.temprature }}
+    Wind Speed : {{ city.wind }}
+    <figure class="image is-50x50">
+        <img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="Image">
+    </figure>
+    {% endfor %}
+</body>
+
+</html>
