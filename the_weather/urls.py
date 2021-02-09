@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from weather.views import index, show_weather
+from weather import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index),
-    path("city", show_weather),
+    path("", views.index, name="index"),
 ]

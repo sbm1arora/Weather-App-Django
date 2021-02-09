@@ -2,21 +2,25 @@
 <html>
 
 <head>
-    <title>City Weather</title>
+    <title>{{ weather.city }} Weather</title>
 </head>
 
 <body>
-    {% for city in weather %}
 
-    <h1>City : {{ city.city }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>City : {{ weather.city }}</h1>
     <h2>Weather Details</h2>
-    Description : {{ city.description }}
-    Temprature : {{ city.temprature }}
-    Wind Speed : {{ city.wind }}
+    Description : {{ weather.description }}
+    Temprature : {{ weather.temprature }}
+    Wind Speed : {{ weather.wind }}
     <figure class="image is-50x50">
-        <img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="Image">
+        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
     </figure>
-    {% endfor %}
 </body>
 
 </html>
